@@ -92,7 +92,7 @@ dat[, ZIP := last_valid(ZIP), `Patient ID`]
 
 #make Birthday reflect the last dose-- expand to addresses later
 setorder(dat, WaiisEntryDate)
-dat[, Birthday := last_valid(Birthday)]
+dat[, Birthday := last_valid(Birthday), `Patient ID`]
 
 #remove duplicates
 setorder(dat, `Patient ID`, `Vacc. Date`, WaiisEntryDate)
